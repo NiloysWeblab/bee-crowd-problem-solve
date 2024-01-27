@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+  
+  int note[6] = {100, 50, 20, 10, 5, 2};
+  float coin[6] = {1, 0.50, 0.25, 0.10, 0.05,0.01};
+  int coins[6] = {100, 50, 25, 10, 5, 1};
+  
+  int count_note[6];
+  int count_coin[6];
+  
+  float N;
+  scanf("%f", &N);
+  
+  if(N<0){
+    return 0;
+    }
+  
+  int count;
+  
+  for(int i=0; i<6; i++){
+    
+      count = N/note[i];
+      N -= count * note[i];
+      count_note[i] = count; 
+    }
+    
+    N *= 100;
+    
+    int c = N;
+    float f = N-c-0.9;
+    c = (f>0.00)? c+1 : c; 
+    
+    for(int i=0; i<6; i++){
+      
+      count = c/coins[i];
+      c -= count * coins[i];
+      count_coin[i] = count; 
+  
+  }
+ 
+     
+    printf("NOTAS:\n");
+    for(int i=0; i<6; i++) {
+printf("%d nota(s) de R$ %d.00\n", count_note[i], note[i]);
+    }
+    
+      printf("MOEDAS:\n");
+    for(int i=0; i<6; i++) {
+printf("%d moeda(s) de R$ %.2f\n", count_coin[i], coin[i]); 
+  }
+    
+ 
+  return 0;
+}
