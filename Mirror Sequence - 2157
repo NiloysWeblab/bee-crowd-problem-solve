@@ -1,0 +1,55 @@
+//Niloy Hasan Nahid
+
+#include <stdio.h>
+
+void printArray(int B, int E);
+void printMirror(int B, int E);
+void swap(int n);
+
+int main(void){
+
+int c;
+scanf("%d", &c);
+int B, E;
+
+while(c--){
+
+    scanf("%d %d", &B, &E);
+    if(B<1 || B>E)
+        return 0;
+
+  printArray(B, E);
+  printMirror(E, B);
+  printf("\n");
+
+
+}
+
+
+return 0;
+}
+
+
+void printArray(int B, int E){
+for(int i=B; i<=E; i++){
+    printf("%d", i);
+}
+}
+
+void printMirror(int B, int E){
+for(int i=B; i>=E; i--){
+    swap(i);
+}
+}
+
+
+void swap(int n){
+int r=0;
+
+while(n){
+    r= n%10;
+    printf("%d", r);
+    n/=10;
+
+}
+}
