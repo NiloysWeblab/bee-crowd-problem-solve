@@ -1,0 +1,63 @@
+
+\\NILOY HASAN NAHID
+
+#include <stdio.h>
+
+void scanArray(int array[], int m);
+int checkArray(int array[], int m);
+int main(void){
+
+int n;
+scanf("%d", &n);
+
+while(n--){
+
+    int m;
+    scanf("%d", &m);
+
+    int array[m];
+    scanArray(array, m);
+    printf("%d\n", checkArray(array, m));
+
+
+}
+
+
+
+return 0;
+}
+
+int checkArray(int array[], int m){
+int count = 0;
+int arr[m];
+for(int i=0; i<m;i++){
+        arr[i] = array[i];
+}
+
+for(int i=0; i<m-1; i++){
+    for(int j=0; j<m-1-i; j++){
+        if(arr[j]<arr[j+1]){
+            int temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+        }
+    }
+}
+
+
+for(int i=0; i<m; i++){
+    if(array[i]==arr[i])
+        count++;
+}
+
+
+
+return count;
+}
+
+void scanArray(int array[], int m){
+
+for(int i=0; i<m; i++){
+    scanf("%d", &array[i]);
+}
+}
