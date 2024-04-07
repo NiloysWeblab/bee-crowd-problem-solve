@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+long long int fact(int a);
+
+int main(void){
+
+int m, n;
+
+while(scanf("%d %d", &m, &n)!=EOF){
+    printf("%lld\n", fact(m)+fact(n));
+}
+
+
+return 0;
+}
+
+long long int fact(int a){
+
+long long int factorial=1;
+for(int i=1; i<=a; i++)
+    factorial *= i;
+
+    return factorial;
+}
