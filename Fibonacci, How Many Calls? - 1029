@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int fibonacci(int n, int *call);
+
+int main(void){
+
+int t, n;
+scanf("%d", &t);
+
+while(t--){
+scanf("%d", &n);
+int call=-1;
+int fibo = fibonacci(n, &call);
+printf("fib(%d) = %d calls = %d\n",n, call ,fibo);
+}
+
+return 0;
+}
+
+
+int fibonacci(int n, int *call){
+*call += 1;
+if(n<=0)
+    return 0;
+else if(n==1)
+    return 1;
+
+else
+   return fibonacci(n-1, call) + fibonacci(n-2, call);
+}
