@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    int t;
+    cin >> t;
+    while(t--){
+        string s;
+        int n;
+        cin >> s;
+        cin >> n;
+
+        int size = s.length();
+
+        for(int i=0; i<size; i++){
+
+            int a = n;
+            while(a){
+                if(s[i]=='A' && a>0){
+                    s[i] = 'Z';
+                } else {
+                    s[i]--;
+                }
+                a--;
+            }
+        }
+
+        cout << s << endl;
+    }
+
+    return 0;
+}
