@@ -1,0 +1,11 @@
+#include <stdio.h>
+#define r 3.14159
+int main() {
+  double A, R;
+  scanf("%lf", &R);
+  A = r * R *R;
+  printf("A=%.4lf\n", A);
+    
+ 
+    return 0;
+}
