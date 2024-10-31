@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+#define nl '\n'
+
+using namespace std;
+
+int main(){
+
+    int t;
+    cin >> t;
+
+    while(t--){
+
+        int a, c;
+        char b;
+        cin >> a >> b >> c;
+
+        if(a==c){
+            cout << a*c << nl;
+        } else if(isupper(b)){
+            cout << c - a << nl;
+        } else {
+            cout << a + c << nl;
+        }
+    
+    }
+
+    return 0;
+}
